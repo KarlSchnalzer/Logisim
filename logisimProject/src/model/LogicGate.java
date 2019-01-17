@@ -11,7 +11,7 @@ public class LogicGate {
 	private int y; // the y-coordinate of the gate on the circuit canvas
 	
 	/**
-	 * Constructor for a gate
+	 * Constructor for a logic gate
 	 * @param i1 - the value of the first input
 	 * @param i2 - the value of the second input
 	 * @param xc - the x-coordinate of the gate
@@ -97,4 +97,5 @@ public class LogicGate {
 		return input2;
 	}
 }
+
 
