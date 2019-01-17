@@ -12,7 +12,7 @@ public class OrGate extends LogicGate{
 	private int y; // the y-coordinate of the gate on the circuit canvas
 	
 	/**
-	 * Constructor for a gate
+	 * Constructor for an OR gate
 	 * @param i1 - the value of the first input
 	 * @param i2 - the value of the second input
 	 * @param xc - the x-coordinate of the gate
@@ -23,14 +23,14 @@ public class OrGate extends LogicGate{
 	}
 	
 	/**
-	 * Default constructor for an AND gate
+	 * Default constructor for an OR gate
 	 */
 	public OrGate(){
 		super(0,0,1,1);
 	}
 	
 	/**
-	 * Computes the output of the AND gate using boolean logic for the inputs
+	 * Computes the output of the OR gate using boolean logic for the inputs
 	 * @return - the output of the gate
 	 */
 	public int getOutput(){
