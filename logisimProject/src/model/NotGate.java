@@ -85,15 +85,5 @@ public class NotGate{
 	public int getInput(){
 		return input;
 	}
-	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args){
-		NotGate ng = new NotGate(1,1,1);
-		System.out.println("The input is " + ng.getInput());
-		System.out.println("The x-coord is " + ng.getX());
-		System.out.println("The y-coord is " + ng.getY());
-		System.out.println("The output is " + ng.getOutput());
-	}
+
 }

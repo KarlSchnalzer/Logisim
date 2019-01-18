@@ -36,13 +36,4 @@ public class AndGate extends LogicGate{
 			return 0;
 		}	
 	}
-	
-	public static void main(String[] args){
-		AndGate ng = new AndGate(1,0,1,1);
-		System.out.println("The input1 is " + ng.getInput1());
-		System.out.println("The input2 is " + ng.getInput2());
-		System.out.println("The x-coord is " + ng.getX());
-		System.out.println("The y-coord is " + ng.getY());
-		System.out.println("The output is " + ng.getOutput());
-	}
 }
