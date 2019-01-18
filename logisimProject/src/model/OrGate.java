@@ -19,14 +19,22 @@ public class OrGate extends LogicGate{
 	 * @param yc - the y-coordinate of the gate
 	 */
 	public OrGate(int i1, int i2, int xc, int yc){
-		super(i1,i2,xc,yc);
+		if((i1==1 || i1==0) && (i2==1 || i2==0)){ //checks to see if inputs are valid (0 or 1)
+			input1  = i1;
+			input2 = i2;
+		}else{
+			input1=1; //if inputs are invalid, sets each input to a default value of 0
+			input2=0;
+		}
+		x = xc;
+		y = yc;
 	}
 	
 	/**
 	 * Default constructor for an OR gate
 	 */
 	public OrGate(){
-		super(0,0,1,1);
+		this(0,0,1,1);
 	}
 	
 	/**

@@ -22,7 +22,7 @@ public class LogicGate {
 			input1  = i1;
 			input2 = i2;
 		}else{
-			input1=0; //if inputs are invalid, sets each input to a default value of 0
+			input1=1; //if inputs are invalid, sets each input to a default value of 0
 			input2=0;
 		}
 		x = xc;
@@ -33,8 +33,9 @@ public class LogicGate {
 	 * Default constructor for a Logic gate
 	 */
 	public LogicGate(){
-		this(0,0,1,1);
+		this(1,0,1,1);
 	}
+	
 	
 	/**
 	 * sets the x-coordinate of the gate
