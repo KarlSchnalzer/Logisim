@@ -5,7 +5,7 @@ import java.util.HashMap;
  * 
  * @author Karl Schnalzer
  * Class CircuitData is a java class which keeps track of all circuit 
- * data(connections, x/y-coordinates, etc.)
+ * data(connections, input/ outputs, etc.)
  */
 public class CircuitData {
 	private HashMap<Integer,LogicGate> logicGates;
