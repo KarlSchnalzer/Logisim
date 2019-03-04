@@ -52,8 +52,5 @@ public class CircuitData {
 		}
 	}
 	
-	 public static void main(String[] args){
-		 
-	 }
-	
+	 
 }
