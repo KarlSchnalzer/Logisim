@@ -9,6 +9,7 @@ public class LogicGate {
 	private int input2; // the second input of the gate
 	private int x; // the x-coordinate of the gate on the circuit canvas
 	private int y; // the y-coordinate of the gate on the circuit canvas
+	private int output;
 	
 	/**
 	 * Constructor for a logic gate
@@ -27,6 +28,7 @@ public class LogicGate {
 		}
 		x = xc;
 		y = yc;
+		output = getOutput();
 	}
 	
 	/**
@@ -96,6 +98,9 @@ public class LogicGate {
 	 */
 	public int getInput2(){
 		return input2;
+	}
+	public int getOutput(){
+		return output;
 	}
 }
 

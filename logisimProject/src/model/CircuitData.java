@@ -1,6 +1,15 @@
 package model;
 
 import java.util.HashMap;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 /**
  * 
  * @author Karl Schnalzer
@@ -10,6 +19,7 @@ import java.util.HashMap;
 public class CircuitData {
 	private HashMap<Integer,LogicGate> logicGates;
 	private int id;
+	private static Socket socket;
 	
 	public CircuitData(){
 		logicGates = new HashMap<Integer, LogicGate>();
@@ -23,4 +33,27 @@ public class CircuitData {
 		logicGates.put(id,lg);
 		id++;
 	}
+	
+	public int getGateOutput(int id){
+		for(int key: logicGates.keySet()){
+			if(key==id){
+				return logicGates.get(key).getOutput();
+			}
+		}
+		return 0;
+	}
+	
+	public void setInputs(int id, int i1, int i2){
+		for(int key: logicGates.keySet()){
+			if(key==id){
+				logicGates.get(key).setInput1(i1);
+				logicGates.get(key).setInput2(i2);
+			}
+		}
+	}
+	
+	 public static void main(String[] args){
+		 
+	 }
+	
 }
