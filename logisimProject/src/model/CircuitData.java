@@ -43,14 +43,75 @@ public class CircuitData {
 		return 0;
 	}
 	
-	public void setInputs(int id, int i1, int i2){
+	public void setInput1(int id, int i1){
 		for(int key: logicGates.keySet()){
 			if(key==id){
 				logicGates.get(key).setInput1(i1);
+			}
+		}
+	}
+	public void setInput2(int id, int i2){
+		for(int key: logicGates.keySet()){
+			if(key==id){
 				logicGates.get(key).setInput2(i2);
 			}
 		}
 	}
 	
-	 
+	public static void main(String[] args){
+		try
+        {
+ 
+            int port = 25000;
+            ServerSocket serverSocket = new ServerSocket(port);
+            System.out.println("Server Started and listening to the port 25000");
+ 
+            //Server is running always. This is done using this while(true) loop
+            while(true)
+            {
+                //Reading the message from the client
+                socket = serverSocket.accept();
+                InputStream is = socket.getInputStream();
+                InputStreamReader isr = new InputStreamReader(is);
+                BufferedReader br = new BufferedReader(isr);
+                String msg = br.readLine();
+                System.out.println("Message received from client is "+msg);
+ 
+               if(msg.equals(arg0)){
+            	   
+               }
+                String returnMessage;
+                try
+                {
+                   
+                }
+                catch(NumberFormatException e)
+                {
+                    //Input was not correct message. Sending proper message back to client.
+                    returnMessage = "Please send a proper message\n";
+                }
+ 
+                //Sending the response back to the client.
+                OutputStream os = socket.getOutputStream();
+                OutputStreamWriter osw = new OutputStreamWriter(os);
+                BufferedWriter bw = new BufferedWriter(osw);
+                bw.write(returnMessage);
+                System.out.println("Message sent to the client is "+returnMessage);
+                bw.flush();
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            try
+            {
+                socket.close();
+            }
+            catch(Exception e){}
+        }
+    }
+	}
 }
