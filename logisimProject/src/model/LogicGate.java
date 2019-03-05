@@ -78,15 +78,12 @@ public class LogicGate {
 	 * sets a logic gate to be connected to the first input of the current gate
 	 * @param c1id - the id of the first connectee logic gate
 	 */
-	public void setConnectionOneId(Integer c1id){
-		connectionOneId = c1id;
-	}
-	/**
-	 * sets a logic gate to be connected to the second input of the current gate
-	 * @param c2id - the id of the second connectee logic gate
-	 */
-	public void setConnectionTwoId(Integer c2id){
-		connectionOneId = c2id;
+	public void setConnectionOneId(Integer cId){
+		if(connectionOneId.equals(null)){
+			connectionOneId = cId;
+		}else{
+			connectionTwoId = cId;
+		}
 	}
 	/**
 	 * 
