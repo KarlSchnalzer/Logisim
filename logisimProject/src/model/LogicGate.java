@@ -7,11 +7,11 @@ package model;
 public class LogicGate {
 	private int input1; // the first input of the gate
 	private int input2; // the second input of the gate
-	private int x; // the x-coordinate of the gate on the circuit canvas
-	private int y; // the y-coordinate of the gate on the circuit canvas
+	private double x; // the x-coordinate of the gate on the circuit canvas
+	private double y; // the y-coordinate of the gate on the circuit canvas
 	private int output;
-	private int connectionOneId; //the id of the gate connected to the first input of the logic gate
-	private int connectionTwoId; //the id of the gate connected to the second input of the logic gate
+	private Integer connectionOneId; //the id of the gate connected to the first input of the logic gate
+	private Integer connectionTwoId; //the id of the gate connected to the second input of the logic gate
 	
 	/**
 	 * Constructor for a logic gate
@@ -20,7 +20,7 @@ public class LogicGate {
 	 * @param xc - the x-coordinate of the gate
 	 * @param yc - the y-coordinate of the gate
 	 */
-	public LogicGate(int i1, int i2, int xc, int yc, int c1id, int c2id){
+	public LogicGate(int i1, int i2, double xc, double yc){
 		if((i1==1 || i1==0) && (i2==1 || i2==0)){ //checks to see if inputs are valid (0 or 1)
 			input1  = i1;
 			input2 = i2;
@@ -31,15 +31,15 @@ public class LogicGate {
 		x = xc;
 		y = yc;
 		output = getOutput();
-		connectionOneId = c1id;
-		connectionTwoId = c2id;
+		connectionOneId = null;
+		connectionTwoId = null;
 	}
 	
 	/**
 	 * Default constructor for a Logic gate
 	 */
 	public LogicGate(){
-		this(1,0,1,1,0,0);
+		this(1,0,1,1);
 	}
 	
 	
@@ -47,7 +47,7 @@ public class LogicGate {
 	 * sets the x-coordinate of the gate
 	 * @param xc - the x-coordinate the user wishes to set
 	 */
-	public void setX(int xc){
+	public void setX(double xc){
 		x = xc;
 	}
 	
@@ -55,7 +55,7 @@ public class LogicGate {
 	 * sets the y-coordinate of the gate
 	 * @param yc - the y-coordinate the user wishes to set
 	 */
-	public void setY(int yc){
+	public void setY(double yc){
 		y = yc;
 	}
 	
@@ -78,28 +78,28 @@ public class LogicGate {
 	 * sets a logic gate to be connected to the first input of the current gate
 	 * @param c1id - the id of the first connectee logic gate
 	 */
-	public void setConnectionOneId(int c1id){
+	public void setConnectionOneId(Integer c1id){
 		connectionOneId = c1id;
 	}
 	/**
 	 * sets a logic gate to be connected to the second input of the current gate
 	 * @param c2id - the id of the second connectee logic gate
 	 */
-	public void setConnectionTwoId(int c2id){
+	public void setConnectionTwoId(Integer c2id){
 		connectionOneId = c2id;
 	}
 	/**
 	 * 
 	 * @return - the x-coordinate of the gate
 	 */
-	public int getX(){
+	public double getX(){
 		return x;
 	}
 	
 	/**
 	 * @return - the y-coordinate of the gate
 	 */
-	public int getY(){
+	public double getY(){
 		return y;
 	}
 	
@@ -120,14 +120,14 @@ public class LogicGate {
 	 * 
 	 * @return - the id of the first input connected gate
 	 */
-	public int getConnectionOneId(){
+	public Integer getConnectionOneId(){
 		return connectionOneId;
 	}
 	/**
 	 * 
 	 * @return - the id of the second input connected gate
 	 */
-	public int getConnectionTwoId(){
+	public Integer getConnectionTwoId(){
 		return connectionTwoId;
 	}
 	/**
